@@ -4,7 +4,8 @@
   "scripts": {
     "build:common": "ng build common",
     "build:lcu": "ng build lcu --prod --single-bundle && npm run pack",
-    "demo": "npm run build:common && npm run build:lcu && npm run start",
+    "demo": "npm run build:common && npm run start",
+    "demo:lcu": "npm run build:common && npm run build:lcu && npm run start",
     "deploy": "npm version patch && npm run deploy:all",
     "deploy:all": "npm run deploy:common && npm run deploy:lcu && npm run deploy:demo",
     "deploy:common": "npm version patch --prefix projects/common && ng build common && npm publish ./dist/common --access public",
@@ -37,7 +38,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "@aspnet/signalr": "^1.1.2",
-    "@lcu-ide/common": "0.0.11",
+    "@lcu-ide/common": "0.0.16",
     "@lowcodeunit-devkit/ng-lcu": "^0.1.2-integration",
     "@webcomponents/custom-elements": "^1.2.1",
     "@webcomponents/webcomponentsjs": "^2.2.7",

@@ -1,9 +1,9 @@
 export class LCUState {
-  public ActiveState?: string;
+  public ActiveState?: LCUStateConfig;
 
   public Loading?: boolean;
 
-  public States?: LCUStateConfig[];
+  public States?: string[];
 }
 
 export class LCUStateConfig {

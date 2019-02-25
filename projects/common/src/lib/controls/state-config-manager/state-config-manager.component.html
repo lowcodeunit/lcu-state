@@ -1,3 +1,49 @@
-<mat-toolbar>
-  <h2>State</h2>
-</mat-toolbar>
+<ng-container *ngIf="State && !State.Loading">
+  <mat-toolbar>
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <h2>State</h2>
+
+    <span class="filler"></span>
+
+    <a mat-icon-button>
+      <mat-icon>settings</mat-icon>
+    </a>
+  </mat-toolbar>
+
+  <mat-drawer-container class="state-drawer">
+    <mat-drawer mode="side" #drawer opened>
+      <mat-nav-list>
+        <mat-list-item *ngFor="let state of State.States">
+          <a matLine>{{ state }}</a>
+
+          <button mat-icon-button>
+            <mat-icon>settings</mat-icon>
+          </button>
+        </mat-list-item>
+
+        <mat-list-item>
+          <a matLine>Add New State</a>
+
+          <button mat-icon-button>
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <div class="state-content">
+        <h2 *ngIf="!State.ActiveState">Add or Select a State to continue (select the settings cog to manage a state).</h2>
+
+        <h2 *ngIf="State.ActiveState">{{ State.ActiveState.Name }}</h2>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</ng-container>
+
+<div class="state-content" *ngIf="State.Loading">
+  <mat-spinner></mat-spinner>
+</div>

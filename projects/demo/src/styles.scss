@@ -1,1 +1,24 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  .mat-spinner {
+    margin: auto;
+  }
+
+  .filler {
+    flex: auto 1 1;
+  }
+}
+
+.state-drawer {
+  height: calc(100% - 64px);
+}
+
+.state-content {
+  padding: 2rem;
+}
