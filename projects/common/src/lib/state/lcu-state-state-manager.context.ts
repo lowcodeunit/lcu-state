@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { StateManagerContext } from '@lcu-ide/common';
 import { LCUState, LCUStateConfig, LCUStateAction } from './lcu-state.model';
 
@@ -9,8 +9,8 @@ export class LcuStateStateManagerContext extends StateManagerContext<LCUState> {
   //  Properties
 
   //  Constructors
-  constructor() {
-    super();
+  constructor(protected injector: Injector) {
+    super(injector);
   }
 
   //  API Methods
@@ -49,17 +49,11 @@ export class LcuStateStateManagerContext extends StateManagerContext<LCUState> {
     return <LCUState>{ Loading: true };
   }
 
-  protected loadHubUrl() {
-    // return '/state';
-    // return 'http://www.lowcodeunit.com/state';
-    return 'http://localhost:52235/state';
-  }
-
-  protected loadStateKey() {
+  protected async loadStateKey() {
     return 'main';
   }
 
-  protected loadStateName() {
+  protected async loadStateName() {
     return 'lcu-state';
   }
 }
