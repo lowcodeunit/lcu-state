@@ -2,11 +2,12 @@ import { NgModule, DoBootstrap, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SELECTOR_STATE_CONFIG_MANAGER_ELEMENT, StateConfigManagerElementComponent, LcuStateModule } from '@lcu-ide/lcu-state-common';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, BrowserModule, LcuStateModule]
+  imports: [CommonModule, BrowserAnimationsModule, BrowserModule, LcuStateModule]
 })
 export class AppModule implements DoBootstrap {
   //  Constructors
