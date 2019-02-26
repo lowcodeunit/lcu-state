@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LcuStateModule } from '@lcu-ide/lcu-state-common';
-import { FathymSharedModule } from '@lcu-ide/common';
+import { FathymSharedModule, LCUServiceSettings } from '@lcu-ide/common';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,16 @@ import { FathymSharedModule } from '@lcu-ide/common';
     BrowserAnimationsModule,
     LcuStateModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LCUServiceSettings,
+      useValue: <LCUServiceSettings>{
+        APIRoot: `http://localhost:52235`,
+        // APIRoot: `http://www.lowcodeunit.com`,
+        // APIRoot: ``,
+      }
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
