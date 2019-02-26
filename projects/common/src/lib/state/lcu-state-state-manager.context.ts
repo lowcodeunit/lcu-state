@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { StateManagerContext } from '@lcu-ide/common';
-import { LCUState } from './lcu-state.model';
+import { LCUState, LCUStateConfig, LCUStateAction } from './lcu-state.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,19 +14,31 @@ export class LcuStateStateManagerContext extends StateManagerContext<LCUState> {
   }
 
   //  API Methods
-  public Add(name: string) {
+  public AddAction(stateName: string, actionName: string, action: LCUStateAction) {
     this.Execute({
       Arguments: {
-        Name: name
+        Action: action,
+        Name: actionName,
+        State: stateName
       },
-      Type: 'add'
+      Type: 'add-action'
     });
   }
 
-  public SetActive(name: string) {
+  public Save(config: LCUStateConfig) {
     this.Execute({
       Arguments: {
-        Name: name
+        Config: config
+      },
+      Type: 'save-state'
+    });
+  }
+
+  public SetActive(lookup: string, isSettings: boolean) {
+    this.Execute({
+      Arguments: {
+        Lookup: lookup,
+        IsSettings: isSettings
       },
       Type: 'set-active'
     });

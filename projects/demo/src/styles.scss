@@ -13,12 +13,14 @@ body {
   .filler {
     flex: auto 1 1;
   }
-}
 
-.state-drawer {
-  height: calc(100% - 64px);
-}
+  .mat-full-width {
+    width: 100%;
+  }
 
-.state-content {
-  padding: 2rem;
+  .mat-list-item {
+    &.active {
+      background-color: transparentize($color: #000000, $amount: .95)
+    }
+  }
 }

@@ -1,3 +1,8 @@
-<lcu-state-config-manager>
-
+<lcu-state-config-manager
+  [state]="State"
+  (save-state)="SaveState($event)"
+  (settings)="Settings()"
+  (select-state)="Select($event)"
+  (select-state-settings)="SelectSettings($event)"
+>
 </lcu-state-config-manager>
