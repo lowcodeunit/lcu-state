@@ -1,6 +1,6 @@
 {
   "name": "@lcu-ide/lcu-state",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "scripts": {
     "build:common": "ng build common",
     "build:lcu": "ng build lcu --prod --single-bundle && npm run pack",
