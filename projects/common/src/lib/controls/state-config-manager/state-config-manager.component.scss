@@ -1,18 +1,20 @@
-.state-drawer {
-  height: calc(100% - 64px);
-}
+:host {
+  .state-drawer {
+    height: calc(100% - 64px);
+  }
 
-.state-content {
-  padding: 2rem;
-}
+  .state-content {
+    padding: 2rem;
+  }
 
-.state-actions {
-  padding: 2rem;
-  text-align: right;
-}
+  .state-actions {
+    padding: 2rem;
+    text-align: right;
+  }
 
-.mat-drawer,
-.mat-drawer-container,
-.mat-toolbar {
-  background-color: transparent;
+  .mat-drawer,
+  .mat-drawer-container,
+  .mat-toolbar {
+    background-color: transparent;
+  }
 }
