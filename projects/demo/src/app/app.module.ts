@@ -20,7 +20,7 @@ import { FathymSharedModule, LCUServiceSettings } from '@lcu-ide/common';
     {
       provide: LCUServiceSettings,
       useValue: <LCUServiceSettings>{
-        APIRoot: `http://localhost:52235`,
+        APIRoot: `http://localhost:52235/state`,
         // APIRoot: `http://www.lowcodeunit.com`,
         // APIRoot: ``,
       }
