@@ -17,6 +17,7 @@ import { LcuStateStateManagerContext } from './state/lcu-state-state-manager.con
 import { StateConfigManagerElementComponent } from './elements/state-config-manager-element/state-config-manager-element.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RealTimeService } from '@lcu-ide/common';
 
 @NgModule({
   declarations: [StateConfigManagerComponent, StateConfigManagerElementComponent],
