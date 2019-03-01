@@ -63,6 +63,7 @@ export class StateConfigManagerComponent implements OnChanges, OnInit {
   //  Life Cycle
   public ngOnChanges(_: SimpleChanges) {
     if (_['State']) {
+      // !this.stateInit &&
       if (this.Drawer) {
         this.Drawer.open();
 
