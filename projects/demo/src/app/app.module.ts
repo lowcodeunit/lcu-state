@@ -21,9 +21,10 @@ import { FathymSharedModule, LCUServiceSettings, RealTimeService } from '@lcu-id
     {
       provide: LCUServiceSettings,
       useValue: <LCUServiceSettings>{
-        APIRoot: `http://localhost:52235/state`,
-        // APIRoot: `http://www.lowcodeunit.com/state`,
-        // APIRoot: `/state`,
+        APIRoot: `http://localhost:52235`,
+        // APIRoot: `http://www.lowcodeunit.com`,
+        // APIRoot: `http://5280.lowcodeunit.com`,
+        // APIRoot: ``,
       }
     },
 
