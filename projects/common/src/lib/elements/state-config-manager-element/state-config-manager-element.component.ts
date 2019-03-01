@@ -7,7 +7,7 @@ export class StateConfigManagerElementState {
   public Config: LCUState;
 }
 
-export class ContentElementContext extends LCUElementContext<StateConfigManagerElementState> {}
+export class StateConfigManagerContext extends LCUElementContext<StateConfigManagerElementState> {}
 
 export const SELECTOR_STATE_CONFIG_MANAGER_ELEMENT = 'lcu-state-config-manager-element';
 
@@ -16,7 +16,7 @@ export const SELECTOR_STATE_CONFIG_MANAGER_ELEMENT = 'lcu-state-config-manager-e
   templateUrl: './state-config-manager-element.component.html',
   styleUrls: ['./state-config-manager-element.component.scss']
 })
-export class StateConfigManagerElementComponent extends LcuElementComponent<ContentElementContext> implements OnInit {
+export class StateConfigManagerElementComponent extends LcuElementComponent<StateConfigManagerContext> implements OnInit {
   //  Properties
   public State: LCUState;
 
