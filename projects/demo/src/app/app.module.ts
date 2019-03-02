@@ -27,7 +27,6 @@ import { FathymSharedModule, LCUServiceSettings, RealTimeService } from '@lcu-id
         // APIRoot: ``,
       }
     },
-
   ],
   bootstrap: [AppComponent]
 })
