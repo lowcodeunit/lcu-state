@@ -14,7 +14,7 @@
     "ng": "ng",
     "pack": "npm run pack:lcu",
     "pack:join": "concat-glob-cli -f \"dist/lcu/wc/lcu/lcu.*.js\" -o dist/lcu/wc/lcu-state.lcu.js",
-    "pack:lcu": "mkdirp dist/wc/lcu && npm run pack:main && npm run pack:pollyfills && npm run pack:join",
+    "pack:lcu": "mkdirp dist/lcu/wc/lcu && npm run pack:main && npm run pack:pollyfills && npm run pack:join",
     "pack:main": "concat-glob-cli -f \"dist/lcu/main.*.js\" -o dist/lcu/wc/lcu/lcu.1.js",
     "pack:pollyfills": "concat-glob-cli -f \"dist/lcu/scripts.*.js\" -o dist/lcu/wc/lcu/lcu.0.js",
     "start": "ng serve demo --port=4224",
