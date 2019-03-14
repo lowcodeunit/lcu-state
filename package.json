@@ -1,6 +1,6 @@
 {
   "name": "@lcu-ide/lcu-state",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "scripts": {
     "build:common": "ng build common",
     "build:demo": "ng build demo --prod",
