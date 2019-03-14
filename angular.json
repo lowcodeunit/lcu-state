@@ -29,7 +29,11 @@
                 "input": "./projects/lcu/",
                 "output": "/"
               },
-              "lcu.json"
+              {
+                "glob": "lcu.json",
+                "input": "./",
+                "output": "/"
+              }
             ],
             "styles": [
               "projects/lcu/src/styles.scss"
