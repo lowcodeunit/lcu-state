@@ -28,7 +28,8 @@
                 "glob": "package.json",
                 "input": "./projects/lcu/",
                 "output": "/"
-              }
+              },
+              "lcu.json"
             ],
             "styles": [
               "projects/lcu/src/styles.scss"
