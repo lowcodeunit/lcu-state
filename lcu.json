@@ -5,7 +5,7 @@
     "workspace": "lcu-state"
   },
   "config": {
-    "wc": ["lcu-state.lcu.js"],
+    "wc": ["wc/lcu-state.lcu.js"],
     "solutions": {
       "lcu-state": {
         "element": "lcu-state-config-manager-element"
