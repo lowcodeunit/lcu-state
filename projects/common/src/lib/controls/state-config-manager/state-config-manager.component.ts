@@ -17,12 +17,18 @@ export class StateConfigManagerComponent implements OnChanges, OnInit {
     return this.State.ActiveState ? Object.keys(this.State.ActiveState.Actions) : [];
   }
 
+  public get EnvironmentNames(): string[] {
+    return this.State.ActiveState && this.State.ActiveState.Environments ? Object.keys(this.State.ActiveState.Environments) : [];
+  }
+
   @ViewChild(MatDrawer)
   public Drawer: MatDrawer;
 
   public NewActionAPIRoot: string;
 
   public NewActionName: string;
+
+  public NewEnvName: string;
 
   public NewActionSecurity: string;
 
@@ -74,6 +80,8 @@ export class StateConfigManagerComponent implements OnChanges, OnInit {
 
       this.NewActionName = '';
 
+      this.NewEnvName = '';
+
       this.NewActionSecurity = '';
 
       if (this.SaveStateFormGroup) {
@@ -109,6 +117,18 @@ export class StateConfigManagerComponent implements OnChanges, OnInit {
     this.EmitSaveState();
   }
 
+  public AddNewEnv() {
+    if (!this.State.ActiveState.Environments) {
+      this.State.ActiveState.Environments = {};
+    }
+
+    if (!this.State.ActiveState.Environments[this.NewEnvName]) {
+      this.State.ActiveState.Environments[this.NewEnvName] = { ServerAPIRoot: '', Security: '' };
+    }
+
+    this.EmitSaveState();
+  }
+
   public DefaultValueChanged(defVal: string) {
     try {
       this.State.ActiveState.DefaultValue = JSON.parse(defVal);
@@ -120,15 +140,25 @@ export class StateConfigManagerComponent implements OnChanges, OnInit {
       Name: this.SaveStateFormGroup.controls.name.value,
       Description: this.SaveStateFormGroup.controls.desc.value,
       Lookup: this.SaveStateFormGroup.controls.lookup.value,
-      UseUsername: false,
+      UseUsername: this.State.ActiveState.UseUsername,
       DefaultValue: this.State.ActiveState ? this.State.ActiveState.DefaultValue : '',
-      Actions: this.State.ActiveState ? this.State.ActiveState.Actions : {}
+      Actions: this.State.ActiveState ? this.State.ActiveState.Actions : {},
+      ActiveEnvironment: this.State.ActiveState.ActiveEnvironment,
+      Environments: this.State.ActiveState ? this.State.ActiveState.Environments : {}
     });
   }
 
   public RemoveAction(actionName: string) {
     if (confirm(`Are you sure you want to remove action '${actionName}'?`)) {
       delete this.State.ActiveState.Actions[actionName];
+
+      this.EmitSaveState();
+    }
+  }
+
+  public RemoveEnv(envName: string) {
+    if (confirm(`Are you sure you want to remove environment '${envName}'?`)) {
+      delete this.State.ActiveState.Environments[envName];
 
       this.EmitSaveState();
     }

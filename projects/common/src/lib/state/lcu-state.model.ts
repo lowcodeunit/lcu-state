@@ -11,9 +11,13 @@ export class LCUState {
 export class LCUStateConfig {
   public Actions: { [action: string]: LCUStateAction };
 
+  public ActiveEnvironment?: string;
+
   public DefaultValue?: any;
 
   public Description: string;
+
+  public Environments?: { [env: string]: LCUStateEnvironment };
 
   public Lookup: string;
 
@@ -26,4 +30,10 @@ export class LCUStateAction {
   public APIRoot: string;
 
   public Security: string;
+}
+
+export class LCUStateEnvironment {
+  public Security: string;
+
+  public ServerAPIRoot: string;
 }

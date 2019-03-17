@@ -10,7 +10,9 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTabsModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatSlideToggleModule,
+  MatSelectModule
 } from '@angular/material';
 import { StateConfigManagerComponent } from './controls/state-config-manager/state-config-manager.component';
 import { LcuStateStateManagerContext } from './state/lcu-state-state-manager.context';
@@ -33,7 +35,9 @@ import { RealTimeService } from '@lcu-ide/common';
     MatInputModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
     MatSidenavModule,
+    MatSlideToggleModule,
     MatTabsModule,
     MatToolbarModule
   ],
