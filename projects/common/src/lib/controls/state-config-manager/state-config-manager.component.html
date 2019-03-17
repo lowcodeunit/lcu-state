@@ -57,7 +57,7 @@
 
               <mat-tab-group>
                 <mat-tab label="Actions">
-                  <mat-form-field class="mat-full-width spread">
+                  <mat-form-field class="mat-full-width spread" *ngIf="EnvironmentNames?.length > 0">
                     <mat-select placeholder="Active Environment" [(ngModel)]="State.ActiveState.ActiveEnvironment" name="actEnv">
                       <mat-option [value]="envName" *ngFor="let envName of EnvironmentNames">{{ envName }}</mat-option>
                     </mat-select>
