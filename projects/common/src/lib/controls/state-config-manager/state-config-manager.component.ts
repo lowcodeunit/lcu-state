@@ -137,13 +137,13 @@ export class StateConfigManagerComponent implements OnChanges, OnInit {
 
   public EmitSaveState() {
     this.SaveState.emit({
-      Name: this.SaveStateFormGroup.controls.name.value,
-      Description: this.SaveStateFormGroup.controls.desc.value,
-      Lookup: this.SaveStateFormGroup.controls.lookup.value,
-      UseUsername: this.State.ActiveState.UseUsername,
+      Name: this.State.ActiveState ? this.State.ActiveState.Name : this.SaveStateFormGroup.controls.name.value,
+      Description: this.State.ActiveState ? this.State.ActiveState.Description : this.SaveStateFormGroup.controls.desc.value,
+      Lookup: this.State.ActiveState ? this.State.ActiveState.Lookup : this.SaveStateFormGroup.controls.lookup.value,
+      UseUsername: this.State.ActiveState ? this.State.ActiveState.UseUsername : false,
       DefaultValue: this.State.ActiveState ? this.State.ActiveState.DefaultValue : '',
       Actions: this.State.ActiveState ? this.State.ActiveState.Actions : {},
-      ActiveEnvironment: this.State.ActiveState.ActiveEnvironment,
+      ActiveEnvironment: this.State.ActiveState ? this.State.ActiveState.ActiveEnvironment : '',
       Environments: this.State.ActiveState ? this.State.ActiveState.Environments : {}
     });
   }
