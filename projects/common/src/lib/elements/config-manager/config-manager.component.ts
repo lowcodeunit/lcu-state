@@ -1,7 +1,7 @@
 import { Component, OnInit, Injector, ViewChild } from '@angular/core';
-import { LCUState, LCUStateConfig } from '../../state/lcu-state.model';
+import { LCUState, LCUStateConfig } from '../../state/config-manager/config-manager-state.model';
 import { LCUElementContext, LcuElementComponent } from '@lcu-ide/common';
-import { LcuStateStateManagerContext } from '../../state/lcu-state-state-manager.context';
+import { LcuStateConfigManagerContext } from '../../state/config-manager/config-manager-state-manager.context';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDrawer } from '@angular/material';
 
@@ -15,8 +15,8 @@ export const SELECTOR_STATE_CONFIG_MANAGER_ELEMENT = 'lcu-state-config-manager-e
 
 @Component({
   selector: SELECTOR_STATE_CONFIG_MANAGER_ELEMENT,
-  templateUrl: './state-config-manager-element.component.html',
-  styleUrls: ['./state-config-manager-element.component.scss']
+  templateUrl: './config-manager.component.html',
+  styleUrls: ['./config-manager.component.scss']
 })
 export class StateConfigManagerElementComponent extends LcuElementComponent<StateConfigManagerContext> implements OnInit {
   //  Fields
@@ -53,7 +53,7 @@ export class StateConfigManagerElementComponent extends LcuElementComponent<Stat
   public State: LCUState;
 
   //  Constructors
-  constructor(protected injector: Injector, protected formBldr: FormBuilder, protected state: LcuStateStateManagerContext) {
+  constructor(protected injector: Injector, protected formBldr: FormBuilder, protected state: LcuStateConfigManagerContext) {
     super(injector);
   }
 

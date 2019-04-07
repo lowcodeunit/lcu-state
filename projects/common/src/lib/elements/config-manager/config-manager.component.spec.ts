@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StateConfigManagerElementComponent } from './state-config-manager-element.component';
+import { StateConfigManagerElementComponent } from './config-manager.component';
 
 describe('StateConfigManagerElementComponent', () => {
   let component: StateConfigManagerElementComponent;

@@ -7,8 +7,11 @@
   "config": {
     "wc": ["wc/lcu-state.lcu.js"],
     "solutions": {
-      "lcu-state": {
+      "config-manager": {
         "element": "lcu-state-config-manager-element"
+      },
+      "infrastructure-manager": {
+        "element": "lcu-state-infrastructure-manager-element"
       }
     },
     "elements": {},

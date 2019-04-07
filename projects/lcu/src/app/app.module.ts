@@ -3,7 +3,13 @@ import { CommonModule } from '@angular/common';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SELECTOR_STATE_CONFIG_MANAGER_ELEMENT, StateConfigManagerElementComponent, LcuStateModule } from '@lcu-ide/lcu-state-common';
+import {
+  SELECTOR_STATE_CONFIG_MANAGER_ELEMENT,
+  SELECTOR_STATE_INFRASTRUCTURE_MANAGER_ELEMENT,
+  StateConfigManagerElementComponent,
+  LcuStateModule,
+  StateInfrastructureManagerElementComponent
+} from '@lcu-ide/lcu-state-common';
 
 @NgModule({
   declarations: [],
@@ -15,8 +21,12 @@ export class AppModule implements DoBootstrap {
 
   //  Life Cycle
   public ngDoBootstrap() {
-    const panel = createCustomElement(StateConfigManagerElementComponent, { injector: this.injector });
+    const cfgMgr = createCustomElement(StateConfigManagerElementComponent, { injector: this.injector });
 
-    customElements.define(SELECTOR_STATE_CONFIG_MANAGER_ELEMENT, panel);
+    customElements.define(SELECTOR_STATE_CONFIG_MANAGER_ELEMENT, cfgMgr);
+
+    const infraMgr = createCustomElement(StateInfrastructureManagerElementComponent, { injector: this.injector });
+
+    customElements.define(SELECTOR_STATE_INFRASTRUCTURE_MANAGER_ELEMENT, infraMgr);
   }
 }

@@ -1,11 +1,11 @@
 import { Injectable, Injector } from '@angular/core';
 import { StateManagerContext } from '@lcu-ide/common';
-import { LCUState, LCUStateConfig, LCUStateAction } from './lcu-state.model';
+import { LCUState, LCUStateConfig, LCUStateAction } from './config-manager-state.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LcuStateStateManagerContext extends StateManagerContext<LCUState> {
+export class LcuStateConfigManagerContext extends StateManagerContext<LCUState> {
   //  Properties
 
   //  Constructors
