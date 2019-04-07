@@ -14,15 +14,13 @@ import {
   MatSlideToggleModule,
   MatSelectModule
 } from '@angular/material';
-import { StateConfigManagerComponent } from './controls/state-config-manager/state-config-manager.component';
 import { LcuStateStateManagerContext } from './state/lcu-state-state-manager.context';
 import { StateConfigManagerElementComponent } from './elements/state-config-manager-element/state-config-manager-element.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RealTimeService } from '@lcu-ide/common';
 
 @NgModule({
-  declarations: [StateConfigManagerComponent, StateConfigManagerElementComponent],
+  declarations: [StateConfigManagerElementComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -41,8 +39,8 @@ import { RealTimeService } from '@lcu-ide/common';
     MatTabsModule,
     MatToolbarModule
   ],
-  exports: [StateConfigManagerComponent, StateConfigManagerElementComponent],
-  entryComponents: [StateConfigManagerComponent, StateConfigManagerElementComponent]
+  exports: [StateConfigManagerElementComponent],
+  entryComponents: [StateConfigManagerElementComponent]
 })
 export class LcuStateModule {
   static forRoot(): ModuleWithProviders {

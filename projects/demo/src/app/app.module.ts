@@ -4,13 +4,23 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LcuStateModule } from '@lcu-ide/lcu-state-common';
-import { FathymSharedModule } from '@lcu-ide/common';
+import { FathymSharedModule, LCUServiceSettings } from '@lcu-ide/common';
 import { environment } from '../environments/environment';
+
+export const settings = FathymSharedModule.DefaultServiceSettings(environment);
+
+// settings.APIRoot = 'http://www.lowcodeunit.com';
+// settings.APIRoot = 'http://www.habistack.com';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [FathymSharedModule.forRoot(environment), BrowserModule, BrowserAnimationsModule, LcuStateModule.forRoot()],
-  providers: [],
+  imports: [FathymSharedModule.forRoot(), BrowserModule, BrowserAnimationsModule, LcuStateModule.forRoot()],
+  providers: [
+    {
+      provide: LCUServiceSettings,
+      useValue: settings
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
