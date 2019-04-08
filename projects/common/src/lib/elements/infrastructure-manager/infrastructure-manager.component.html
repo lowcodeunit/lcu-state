@@ -2,13 +2,52 @@
   <mat-tab-group mat-stretch-tabs>
     <mat-tab label="Infrastructure">
       <div class="spread config">
-        <h2>Managing Infrastructure for State System.</h2>
+        <mat-spinner class="spread" *ngIf="State.Loading"></mat-spinner>
+
+        <ng-container *ngIf="!State.Loading">
+          <ng-container *ngIf="!State.InfrastructureEnabled">
+            <h2>Managing LCU State Infrastructure</h2>
+
+            <p class="mat-body-2">
+              More detailed and cross-platofrm state infrastructure management is on the way. For now, get started with our Azure based
+              state system and streamline the way your applications are built.
+            </p>
+
+            <p class="mat-body-2">
+              The LCU State System is a simple mechanism for managing the data a view displays, and the actions they can take....
+            </p>
+
+            <p class="mat-body-2">
+              Once the infrastructure has been configured and deployed you'll be able to add State APIs to your Ensemble, configure them,
+              and consume them in your Data Applications.
+            </p>
+
+            <a mat-raised-button color="primary" class="mat-button-lg" (click)="EnableInfrastructure()">
+              Enable State Infrastructure
+            </a>
+          </ng-container>
+
+          <ng-container *ngIf="State.InfrastructureEnabled">
+            <h2>LCU State Infrastructure is Enabled</h2>
+
+            <a mat-raised-button color="primary" class="mat-button-lg" (click)="EnableInfrastructure()">
+              Disable State Infrastructure
+            </a>
+          </ng-container>
+        </ng-container>
       </div>
     </mat-tab>
 
-    <mat-tab label="LCU Ensemble">
+    <mat-tab label="State Ensemble" *ngIf="State.InfrastructureEnabled">
       <div class="spread config">
-        <h2>LCU Ensemble Management</h2>
+        <h2>LCU State Ensemble Management</h2>
+
+        <p class="mat-body-2">
+          Your State Ensemble is an orchestration of a series of Open/Closed Source works for driving value.  On this tab you will configure the source
+          locations for your State APIs, their settings, and deployment.
+        </p>
+
+
       </div>
     </mat-tab>
   </mat-tab-group>

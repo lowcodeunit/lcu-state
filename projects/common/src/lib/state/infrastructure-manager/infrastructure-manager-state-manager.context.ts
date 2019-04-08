@@ -1,11 +1,11 @@
 import { Injectable, Injector } from '@angular/core';
 import { StateManagerContext } from '@lcu-ide/common';
-import { LCUInfrastructureManagerState } from './infrastructure-manager-state.model';
+import { InfrastructureManagerState } from './infrastructure-manager-state.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LcuStateInfrastructureManagerContext extends StateManagerContext<LCUInfrastructureManagerState> {
+export class LcuStateInfrastructureManagerContext extends StateManagerContext<InfrastructureManagerState> {
   //  Properties
 
   //  Constructors
@@ -14,19 +14,18 @@ export class LcuStateInfrastructureManagerContext extends StateManagerContext<LC
   }
 
   //  API Methods
-  // public SetActive(lookup: string, isSettings: boolean) {
-  //   this.Execute({
-  //     Arguments: {
-  //       Lookup: lookup,
-  //       IsSettings: isSettings
-  //     },
-  //     Type: 'set-active'
-  //   });
-  // }
+  public EnableInfrastructure() {
+    this.Execute({
+      Arguments: {
+        DeploymentTemplate: ''
+      },
+      Type: 'enable-infrastructure'
+    });
+  }
 
   //  Helpers
   protected defaultValue() {
-    return <LCUInfrastructureManagerState>{ Loading: true };
+    return <InfrastructureManagerState>{ Loading: true };
   }
 
   protected async loadStateKey() {

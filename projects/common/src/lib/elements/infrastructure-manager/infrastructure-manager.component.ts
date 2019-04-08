@@ -1,6 +1,6 @@
 import { Component, OnInit, Injector, ViewChild, SimpleChanges } from '@angular/core';
 import { LcuElementComponent, LCUElementContext } from '@lcu-ide/common';
-import { LCUInfrastructureManagerState } from '../../state/infrastructure-manager/infrastructure-manager-state.model';
+import { InfrastructureManagerState } from '../../state/infrastructure-manager/infrastructure-manager-state.model';
 import { LcuStateInfrastructureManagerContext } from '../../state/infrastructure-manager/infrastructure-manager-state-manager.context';
 
 export class DataAppsConfigManagerElementState {}
@@ -18,7 +18,7 @@ export class StateInfrastructureManagerElementComponent extends LcuElementCompon
   //  Fields
 
   //  Properties
-  public State: LCUInfrastructureManagerState;
+  public State: InfrastructureManagerState;
 
   //  Constructors
   constructor(protected injector: Injector, protected state: LcuStateInfrastructureManagerContext) {
@@ -37,6 +37,11 @@ export class StateInfrastructureManagerElementComponent extends LcuElementCompon
   }
 
   //  API Methods
+  public EnableInfrastructure() {
+    this.State.Loading = true;
+
+    this.state.EnableInfrastructure();
+  }
 
   //  Helpers
   protected handleStateChanged() {
