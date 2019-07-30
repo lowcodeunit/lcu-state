@@ -31,7 +31,7 @@ export class StateConfigManagerElementComponent extends LcuElementComponent<Stat
     return this.State.ActiveState && this.State.ActiveState.Environments ? Object.keys(this.State.ActiveState.Environments) : [];
   }
 
-  @ViewChild(MatDrawer)
+  @ViewChild(MatDrawer, { static: false })
   public Drawer: MatDrawer;
 
   public NewActionAPIRoot: string;
