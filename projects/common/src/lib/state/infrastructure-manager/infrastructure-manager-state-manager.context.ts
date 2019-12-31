@@ -1,5 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
-import { StateManagerContext } from '@lcu-ide/common';
+import { StateManagerContext } from '@lcu/common';
 import { InfrastructureManagerState } from './infrastructure-manager-state.model';
 
 @Injectable({

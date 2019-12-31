@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LcuStateModule } from '@lcu-ide/lcu-state-common';
-import { FathymSharedModule, LCUServiceSettings } from '@lcu-ide/common';
+import { FathymSharedModule, LCUServiceSettings } from '@lcu/common';
 import { environment } from '../environments/environment';
 
 export const settings = FathymSharedModule.DefaultServiceSettings(environment);

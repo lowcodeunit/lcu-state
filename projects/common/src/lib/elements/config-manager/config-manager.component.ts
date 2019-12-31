@@ -1,6 +1,6 @@
 import { Component, OnInit, Injector, ViewChild } from '@angular/core';
 import { LCUState, LCUStateConfig } from '../../state/config-manager/config-manager-state.model';
-import { LCUElementContext, LcuElementComponent } from '@lcu-ide/common';
+import { LCUElementContext, LcuElementComponent } from '@lcu/common';
 import { LcuStateConfigManagerContext } from '../../state/config-manager/config-manager-state-manager.context';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDrawer } from '@angular/material';

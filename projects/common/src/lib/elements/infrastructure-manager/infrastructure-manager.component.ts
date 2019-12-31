@@ -1,5 +1,5 @@
 import { Component, OnInit, Injector, ViewChild, SimpleChanges } from '@angular/core';
-import { LcuElementComponent, LCUElementContext } from '@lcu-ide/common';
+import { LcuElementComponent, LCUElementContext } from '@lcu/common';
 import { InfrastructureManagerState } from '../../state/infrastructure-manager/infrastructure-manager-state.model';
 import { LcuStateInfrastructureManagerContext } from '../../state/infrastructure-manager/infrastructure-manager-state-manager.context';
 
