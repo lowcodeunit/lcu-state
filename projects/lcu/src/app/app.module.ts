@@ -10,10 +10,19 @@ import {
   LcuStateModule,
   StateInfrastructureManagerElementComponent
 } from '@lcu-ide/lcu-state-common';
+import { FathymSharedModule, LCUServiceSettings } from '@lcu/common';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, BrowserAnimationsModule, BrowserModule, LcuStateModule]
+  imports: [BrowserModule, BrowserAnimationsModule, FathymSharedModule, LcuStateModule],
+  providers: [
+    {
+      provide: LCUServiceSettings,
+      useValue: FathymSharedModule.DefaultServiceSettings(environment)
+    },
+  ],
+  exports: [LcuStateModule]
 })
 export class AppModule implements DoBootstrap {
   //  Constructors
